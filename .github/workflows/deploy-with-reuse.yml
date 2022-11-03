@@ -18,6 +18,6 @@ jobs:
     name: Deploy App
     uses: ./.github/workflows/shared-build-deploy.yaml
     with:
-      app-name: popular-repos
+      app-name: popular-repos-ghu
       app-resource-group: pied-piper-inc
     secrets: inherit
