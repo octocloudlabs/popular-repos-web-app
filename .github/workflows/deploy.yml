@@ -116,7 +116,7 @@ jobs:
       with:
         app-name: 'popular-repos-ghu'
         images: '${{ secrets.AZURE_REGISTRY_NAME }}/popular-repos:${{ github.sha }}'
-        slot-name: staging
+        slot-name: stage
 
   deploy_to_production:
     name: Deploy Production
@@ -139,5 +139,5 @@ jobs:
 
     - name: Swap staging to production
       run: |
-        az webapp deployment slot swap --name popular-repos-ghu --resource-group pied-piper-inc --slot staging --target-slot production
+        az webapp deployment slot swap --name popular-repos-ghu --resource-group pied-piper-inc --slot stage --target-slot production
 
